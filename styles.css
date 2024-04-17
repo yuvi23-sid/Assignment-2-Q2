@@ -1,0 +1,130 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set body font and background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #001C55, #03256C);
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Container styles */
+.container {
+    width: 500px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styles */
+form {
+    position: relative;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Input field styles */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2); /* Adjusted background color */
+    color: #fff;
+    font-size: 16px;
+}
+
+select {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Remove default arrow for Safari */
+    -moz-appearance: none; /* Remove default arrow for Firefox */
+}
+
+/* Add custom arrow */
+select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+    pointer-events: none;
+}
+
+/* Add hover effect to select */
+select:hover {
+    background: rgba(255, 255, 255, 0.3); /* Adjusted hover background color */
+}
+
+/* Add focus effect to select */
+select:focus {
+    background: rgba(255, 255, 255, 0.4); /* Adjusted focus background color */
+}
+
+/* Add focus effect to select arrow */
+select:focus::after {
+    color: #fff;
+}
+
+/* Button styles */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #F2C94C;
+    color: #001C55;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #FFD166;
+}
+
+/* Fieldset styles */
+fieldset {
+    border: none;
+}
+
+/* Confirmation message styles */
+#confirmationContainer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    opacity: 1; /* Change opacity to 1 to ensure visibility */
+    transition: opacity 0.5s ease;
+}
+
+/* Add a subtle animation */
+@keyframes formAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    animation: formAnimation 1s ease;
+}
